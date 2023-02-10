@@ -1,0 +1,8 @@
+version: 1.0
+runtime: corretto8
+build:
+  commands:    
+    build:
+      - mvn clean package
+run:                              
+  command: java -Xms512m -Xms1024m -jar target/chatgpt-wechat-1.0-SNAPSHOT.jar

@@ -4,30 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="851ec033-9414-43f4-a280-035bc0404884" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/DemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/configuration/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/configuration/MyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/controller/WechatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/model/BaseMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/model/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/model/ImageMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/model/TextMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/service/ChatGPTService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/service/CheckSignatureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/service/WechatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/util/HashUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/ricky/demo/util/MessageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+    <list default="true" id="851ec033-9414-43f4-a280-035bc0404884" name="Changes" comment="wechat for chatGPT">
+      <change afterPath="$PROJECT_DIR$/apprunner.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +35,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/i569071/my-workspace/chatgpt-wechat/src/main/java/cn/ricky/demo"
+    "last_opened_file_path": "/Users/i569071/my-workspace/chatgpt-wechat",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/cn/ricky/demo" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -83,8 +66,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676002673251</updated>
-      <workItem from="1676002675748" duration="2414000" />
+      <workItem from="1676002675748" duration="2885000" />
     </task>
+    <task id="LOCAL-00001" summary="wechat for chatGPT">
+      <created>1676007144488</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676007144489</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +91,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="for chatGPT" />
+    <MESSAGE value="wechat for chatGPT" />
+    <option name="LAST_COMMIT_MESSAGE" value="wechat for chatGPT" />
   </component>
 </project>
