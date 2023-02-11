@@ -103,6 +103,7 @@ public class WechatService {
       textMessage.setContent(respContent);
       // 将文本消息对象转换成xml
       respXml = MessageUtil.textMessageToXml(textMessage);
+      log.info("respXml:{}", respXml);
     } catch (Exception e) {
       log.error("processRequest failed", e);
     }
