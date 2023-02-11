@@ -66,8 +66,6 @@ public class MessageUtil {
     Map<String, String> map = new HashMap<String, String>(3);
     try {
       SAXReader reader = new SAXReader();
-      System.out.println(request.getInputStream());
-      InputStream in = request.getInputStream();
       BOMInputStream bomInputStream = new BOMInputStream(request.getInputStream(), "UTF-8");
       //转成xml
       Document doc = reader.read(request.getInputStream());
