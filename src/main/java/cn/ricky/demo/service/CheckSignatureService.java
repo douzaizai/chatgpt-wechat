@@ -1,6 +1,7 @@
 package cn.ricky.demo.service;
 
 import cn.ricky.demo.configuration.MyConfig;
+import cn.ricky.demo.dto.SignatureEntity;
 import cn.ricky.demo.util.HashUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,16 @@ public class CheckSignatureService {
 
   @Autowired
   private MyConfig myConfig;
+
+  /**
+   * 实现对回传参数的hash，然后同回传参数signature比对
+   *
+   * @param signatureEntity
+   * @return
+   */
+  public boolean checkSignature(SignatureEntity signatureEntity) {
+    return this.checkSignature(signatureEntity.getSignature(), signatureEntity.getTimestamp(), signatureEntity.getNonce());
+  }
 
   /**
    * 实现对回传参数的hash，然后同回传参数signature比对
