@@ -32,7 +32,7 @@ public class WechatController {
   public void callback(HttpServletRequest request, HttpServletResponse response) {
     try {
       String result = wechatService.processRequest(request);
-      response.setContentType("text/xml");
+      response.setContentType("text/xml;charset=utf-8");
       PrintWriter out = response.getWriter();
       out.write(result);
       out.flush();
