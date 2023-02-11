@@ -48,6 +48,7 @@ public class WechatService {
         //消息内容
         String content = requestMap.get("Content");
         respContent = chatGPTService.chat(content, fromUserName);
+        respContent = "test";
       }
       // 图片消息
       else if (msgType.equals(MessageUtil.MESSAGE_IMAGE)) {
