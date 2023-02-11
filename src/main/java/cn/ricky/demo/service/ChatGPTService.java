@@ -25,7 +25,7 @@ public class ChatGPTService {
       CompletionRequest completionRequest = CompletionRequest.builder()
               .model(model)
               .prompt(prompt)
-              .temperature(0.1)
+              .temperature(0.9)
               .maxTokens(myConfig.getGptMaxTokens())
               .n(1)
               //.stream(true)
@@ -34,7 +34,7 @@ public class ChatGPTService {
               .user(user).build();
       List<CompletionChoice> choices = service.createCompletion(completionRequest).getChoices();
       for (CompletionChoice choice : choices) {
-        result.append(choice.getText()).append("\n");
+        result.append(choice.getText().replace("\\n\\n","")).append("\n");
         log.info("choice:" + choice);
       }
     } catch (Exception e) {
