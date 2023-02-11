@@ -6,6 +6,7 @@ import cn.ricky.demo.util.MessageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.Date;
 
 @Slf4j
@@ -16,6 +17,7 @@ public class WechatService {
   private ChatGPTService chatGPTService;
 
   public OutMsgEntity processRequest(InMsgEntity msg) {
+    log.info("inMsg:{}", msg);
     //创建消息响应对象
     OutMsgEntity out = new OutMsgEntity();
     //把原来的发送方设置为接收方
@@ -85,8 +87,8 @@ public class WechatService {
       }
     }
     out.setContent(respContent);
+    log.info("outMsg:{}", out);
     return out;
-
   }
 
 }
