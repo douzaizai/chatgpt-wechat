@@ -34,6 +34,7 @@ public class WechatController {
       String result = wechatService.processRequest(request);
       PrintWriter out = response.getWriter();
       out.write(result);
+      out.flush();
     } catch (Exception e) {
       log.error("callback error", e);
     }

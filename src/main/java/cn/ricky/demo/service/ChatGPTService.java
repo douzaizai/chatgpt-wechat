@@ -34,7 +34,7 @@ public class ChatGPTService {
               .user(user).build();
       List<CompletionChoice> choices = service.createCompletion(completionRequest).getChoices();
       for (CompletionChoice choice : choices) {
-        result.append(choice.getText().replace("\\n\\n","")).append("\n");
+        result.append(choice.getText().replace("\n\n","")).append("\n");
         log.info("choice:" + choice);
       }
     } catch (Exception e) {
