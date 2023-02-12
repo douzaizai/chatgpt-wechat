@@ -19,4 +19,6 @@ public class MyConfig {
 
   public int gptMaxTokens;
 
+  public double openAITemperature;
+
 }

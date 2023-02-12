@@ -25,7 +25,7 @@ public class ChatGPTService {
       CompletionRequest completionRequest = CompletionRequest.builder()
               .model(model)
               .prompt(prompt)
-              .temperature(0.9)
+              .temperature(myConfig.getOpenAITemperature())
               .maxTokens(myConfig.getGptMaxTokens())
               .n(1)
               //.stream(true)
