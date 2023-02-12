@@ -36,6 +36,12 @@ public class WechatController {
           consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_XML_VALUE}
   )
   @ResponseBody
+  public OutMsgEntity handleMessage2(@RequestBody InMsgEntity msg) {
+    return wechatService.processRequest(msg);
+  }
+
+  @PostMapping(value = "/callback4Json")
+  @ResponseBody
   public OutMsgEntity handleMessage(@RequestBody InMsgEntity msg) {
     return wechatService.processRequest(msg);
   }
