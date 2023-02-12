@@ -1,6 +1,7 @@
 package cn.ricky.demo.controller;
 
 import cn.ricky.demo.dto.InMsgEntity;
+import cn.ricky.demo.dto.InMsgEntity4Xml;
 import cn.ricky.demo.dto.OutMsgEntity;
 import cn.ricky.demo.dto.SignatureEntity;
 import cn.ricky.demo.service.ChatGPTService;
@@ -36,13 +37,13 @@ public class WechatController {
           consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_XML_VALUE}
   )
   @ResponseBody
-  public OutMsgEntity handleMessage2(@RequestBody InMsgEntity msg) {
+  public OutMsgEntity handleMessage(@RequestBody InMsgEntity4Xml msg) {
     return wechatService.processRequest(msg);
   }
 
   @PostMapping(value = "/callback4Json")
   @ResponseBody
-  public OutMsgEntity handleMessage(@RequestBody InMsgEntity msg) {
+  public OutMsgEntity handleMessage4Json(@RequestBody InMsgEntity msg) {
     return wechatService.processRequest(msg);
   }
 
