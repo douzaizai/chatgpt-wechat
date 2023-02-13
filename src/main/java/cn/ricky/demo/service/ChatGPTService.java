@@ -6,22 +6,32 @@ import com.theokanning.openai.completion.CompletionChoice;
 import com.theokanning.openai.completion.CompletionRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.time.Duration;
 import java.util.List;
 
 @Slf4j
 @Service
+@CacheConfig(cacheNames = "caffeineCacheManager")
 public class ChatGPTService {
 
   @Autowired
   private MyConfig myConfig;
 
+  private OpenAiService service;
+
+  @PostConstruct
+  public void init() {
+    service = new OpenAiService(myConfig.getOpenAIToken(), Duration.ofSeconds(myConfig.getOpenAITimeout()));
+  }
+
   public String chat(String model, String prompt, String user) {
     StringBuilder result = new StringBuilder();
     try {
-      OpenAiService service = new OpenAiService(myConfig.getOpenAIToken(), Duration.ofSeconds(60000));
       CompletionRequest completionRequest = CompletionRequest.builder()
               .model(model)
               .prompt(prompt)
@@ -34,7 +44,7 @@ public class ChatGPTService {
               .user(user).build();
       List<CompletionChoice> choices = service.createCompletion(completionRequest).getChoices();
       for (CompletionChoice choice : choices) {
-        result.append(choice.getText().replaceAll("\n\n",""));
+        result.append(choice.getText().replaceAll("\n\n", ""));
         log.info("choice:{}", choice);
       }
     } catch (Exception e) {
@@ -44,6 +54,7 @@ public class ChatGPTService {
     return result.toString();
   }
 
+  @Cacheable(key = "#prompt+':'+#user")
   public String chat(String prompt, String user) {
     return this.chat(myConfig.getOpenAIModel(), prompt, user);
   }

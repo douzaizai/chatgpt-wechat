@@ -21,4 +21,6 @@ public class MyConfig {
 
   public double openAITemperature;
 
+  public int openAITimeout;
+
 }
