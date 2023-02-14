@@ -18,11 +18,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
 
 @Slf4j
 @RestController
 @RequestMapping("/wechat")
 public class WechatController {
+  private static final Set<String> REQUEST_SET = Collections.synchronizedSet(new HashSet<>());
+
   @Autowired
   private WechatService wechatService;
 
@@ -38,7 +45,22 @@ public class WechatController {
   )
   @ResponseBody
   public OutMsgEntity handleMessage(@RequestBody InMsgEntity4Xml msg) {
-    return wechatService.processRequest(msg);
+    String key = new StringBuilder().append(msg.getFromUserName()).append(msg.getToUserName()).append(msg.getMsgType()).append(msg.getContent()).toString();
+    if (REQUEST_SET.contains(key)) {
+      String content = "别着急，我正在思考如何回答你，20s后再问我相同的问题吧";
+      OutMsgEntity outMsg = new OutMsgEntity(msg.getToUserName(), msg.getFromUserName(), msg.getMsgType(), content);
+      return outMsg;
+    }
+
+    try {
+      REQUEST_SET.add(key);
+      OutMsgEntity outMsgEntity = wechatService.processRequest(msg);
+      return outMsgEntity;
+    } catch (Throwable e) {
+      throw e;
+    } finally {
+      REQUEST_SET.remove(key);
+    }
   }
 
   @PostMapping(value = "/callback4Json")
