@@ -23,6 +23,6 @@ server:
 
 cache-config:
   # 过期时间
-  expire-time: 60
+  expire-time: 90
   # 缓存最大数量
   max-size: 500
