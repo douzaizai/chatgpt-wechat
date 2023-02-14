@@ -2,7 +2,7 @@
 <configuration scan="true" scanPeriod="60" debug="false">
     <!-- 自定义变量 -->
     <property name="appName" value="chatgpt-wechat" />
-    <property name="pattern"  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+    <property name="pattern"  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{traceId}] %-5level %logger{36} - %msg%n"/>
     <!-- 设置上下文名称 -->
     <contextName>${appName}</contextName>
 
