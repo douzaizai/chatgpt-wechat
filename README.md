@@ -13,4 +13,4 @@ wechat for chatGPT
 ![Image text](https://github.com/douzaizai/chatgpt-wechat/raw/main/src/main/resources/static/guide.jpg)
 
  # 3 关注我开始体验吧
-![Image text](https://github.com/douzaizai/chatgpt-wechat/raw/main/src/main/resources/static/qrcode.jpg)
+<img src="https://github.com/douzaizai/chatgpt-wechat/raw/main/src/main/resources/static/qrcode.jpg" width="200" height="200"/>
