@@ -10,7 +10,7 @@ wechat for chatGPT
     POST http://localhost:8080/wechat/test
 
  # 2 公众号设置
-![img.png](https://github.com/douzaizai/chatgpt-wechat/tree/main/src/main/resources/static/guide.jpg)
+![Image text](https://github.com/douzaizai/chatgpt-wechat/tree/main/src/main/resources/static/guide.jpg)
 
  # 3 关注我开始体验吧
-![img.png](https://github.com/douzaizai/chatgpt-wechat/tree/main/src/main/resources/static/qrcode.jpg)
+![Image text](https://github.com/douzaizai/chatgpt-wechat/tree/main/src/main/resources/static/qrcode.jpg)
