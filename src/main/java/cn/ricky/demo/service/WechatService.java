@@ -67,7 +67,7 @@ public class WechatService {
       String eventType = msg.getEvent();
       // 关注
       if (eventType.equals(MessageUtil.EVENT_SUB)) {
-        respContent = "欢迎关注Ricky的chatGPT公众号";
+        respContent = "欢迎关注Ricky的chatGPT公众号，个人微信18516698996";
       }
       // 取消关注
       else if (eventType.equals(MessageUtil.EVENT_UNSUB)) {
