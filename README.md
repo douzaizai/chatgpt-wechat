@@ -12,8 +12,7 @@ wechat for chatGPT
  # 2 公众号设置
 ![Image text](https://github.com/douzaizai/chatgpt-wechat/raw/main/src/main/resources/static/guide.jpg)
 
- # 3 关注我开始体验吧
-扫描下面二维码添加公众号
+ # 3 扫描下面二维码关注我开始体验吧
 <img src="https://github.com/douzaizai/chatgpt-wechat/raw/main/src/main/resources/static/qrcode.jpg" width="200" height="200"/>
 
 个人微信：18516698996
